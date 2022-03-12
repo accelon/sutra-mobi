@@ -1,0 +1,21 @@
+{
+  "name": "sutra-mobi",
+  "version": "1.0.0",
+  "description": "sutra-mobi markdown to offtext",
+  "main": "gen-hz.js",
+  "type":"module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/accelon/sutra-mobi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/accelon/sutra-mobi/issues"
+  },
+  "homepage": "https://github.com/accelon/sutra-mobi#readme"
+}
