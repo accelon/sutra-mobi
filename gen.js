@@ -22,13 +22,11 @@ books.forEach(book=>{
     lines=patchBuf( lines.join('\n') , zconvert_fix ,book).split('\n');
 
     if (fs.existsSync(brkfn)) {
-        console.log('pin break')
         lines=toParagraphs(lines).map(it=>it[1].join(''))
         const pins=readTextLines(brkfn);
         outcontent=guidedBreakLines(lines.join('\n'),pins,book).split('\n');
-
     } else {
-        console.log('auto break')
+        console.log(red('missing pin, use auto break'));
         lines=lines.map(line=>autoChineseBreak(line));
         offcontent=lines.join('\n').split('\n');
         const sccontent=readTextLines(scfolder+book+'.ms.off');
@@ -38,10 +36,15 @@ books.forEach(book=>{
         }
         linecountwarning=outcontent.length!==sccontent.length?red("!="+sccontent.length):'';
     }
-    
-    const outfn=desfolder+book+'.hz.off';
+
+    let outfn=desfolder+book+'.hz.off';
     const outbuf=outcontent.join('\n');
-    if (writeChanged(outfn,outbuf)) {
+    if (fs.existsSync(outfn)) {
+        outfn+='.gen';
+        if (writeChanged(outfn,outbuf)) {
+            console.log(red('file exists') ,'written',outfn,'length',outbuf.length,linecountwarning)
+        }
+    }  else  if (writeChanged(outfn,outbuf)) {
         console.log('written',outfn,'length',outbuf.length,linecountwarning)
     }
 });
