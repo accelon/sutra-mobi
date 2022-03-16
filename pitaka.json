@@ -4,6 +4,7 @@
 	"description":"杭州佛學院 主譯：慧音法師",
 	"template":"cs",
 	"lang":"zh",
+      "label":"z",
 	"homepage":"https://github.com/accelon/sutra-mobi",
 	"files":"dn?.hz.off,mn?.hz.off"
 }
