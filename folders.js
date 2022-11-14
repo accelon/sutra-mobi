@@ -1,6 +1,5 @@
 /* ccc files by book code*/
-import { readTextContent,patchBuf} from 'pitaka/cli'
-import { sc } from 'pitaka/meta';
+import { readTextContent,patchBuf, meta_sc} from 'ptk/nodebundle.cjs'
 import {cleanMarkdown} from './cleanmd.js'
 import { Errata_pku,Errata_hz } from './errata.js';
 export const FilesOfBook={
@@ -13,7 +12,7 @@ export const FilesOfBook={
 }
 
 export const filesOfBook=(pat,rootfolder)=>{   
-    let files=sc.getFilesOfBook(pat,FilesOfBook,rootfolder);
+    let files=meta_sc.getFilesOfBook(pat,FilesOfBook,rootfolder);
     let len=2;
     if (pat[0]=='m') len=3;
     return files.filter(fn=>{

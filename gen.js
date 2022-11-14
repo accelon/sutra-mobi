@@ -1,9 +1,9 @@
-import {nodefs, kluer,patchBuf,writeChanged, readTextLines} from 'pitaka/cli';
+import {meta_sc,nodefs, patchBuf,writeChanged, readTextLines,
+ autoAlign, autoChineseBreak ,guidedBreakLines,toParagraphs} from 'ptk/nodebundle.cjs';
+import {yellow,red} from 'ptk/cli/colors.cjs'
 import {filesOfBook,combineMarkdown} from './folders.js'
-import { autoAlign, autoChineseBreak ,guidedBreakLines,toParagraphs} from 'pitaka/align';
-import {zconvert_fix} from './zconvert-fix.js'
-import {sc} from 'pitaka/meta'
-const {yellow,red} =kluer;
+import {zconvert_fix} from './zconvert-fix.js' // fix sim to tradition conversion error
+
 await nodefs; //export fs to global
 
 const pat=process.argv[2] || 'dn1';
@@ -11,9 +11,9 @@ const source=process.argv[3] || 'hzfxy';
 console.log('node gen bkid');
 const srcfolder='nikaya/$/'.replace('$',source);
 const scfolder='../sc/pli/'
-const desfolder='off/';
+const desfolder='cs-hz.offtext/';
 const brkfolder='brk/';
-const books=sc.booksOf(pat);
+const books=meta_sc.booksOf(pat);
 books.forEach(book=>{
     let files=filesOfBook(book,srcfolder);
     let lines=combineMarkdown(files,srcfolder,book,source);

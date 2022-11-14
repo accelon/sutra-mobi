@@ -13,7 +13,8 @@ export const cleanMarkdown=(rawcontent,fn,bkid,firstfile=false)=>{
             let at=1;
             while (at<line.length&&line[at]=='#') at++;
             const h=line.substr(at).trim().replace(/\([^\)]+\)/,'');//remove pali 
-            header+='^z'+at+'['+h+']';
+	//at ==1 , chunk name
+            header+= (at>1?'^z'+at:'')+'('+h+')';
             continue;
         } else {
             const m=line.match(/^([\d+\-]+)/);
