@@ -14,6 +14,7 @@ const scfolder='../sc/pli/'
 const desfolder='cs-hz.offtext/';
 const brkfolder='brk/';
 const books=meta_sc.booksOf(pat);
+
 books.forEach(book=>{
     let files=filesOfBook(book,srcfolder);
     let lines=combineMarkdown(files,srcfolder,book,source);

@@ -12,7 +12,7 @@ export const FilesOfBook={
 }
 
 export const filesOfBook=(pat,rootfolder)=>{   
-    let files=meta_sc.getFilesOfBook(pat,FilesOfBook,rootfolder);
+    const files=meta_sc.getFilesOfBook(pat,FilesOfBook,rootfolder);
     let len=2;
     if (pat[0]=='m') len=3;
     return files.filter(fn=>{

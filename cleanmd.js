@@ -1,9 +1,23 @@
+const abulknames={
+    dn1:'^ak#dn(長部)',
+    mn1:'^bk#mn(中部)',
+}
+const booknames={
+    dn1:'^bk#dn1(長部一)',
+    dn2:'^bk#dn2(長部二)',
+    dn3:'^bk#dn3(長部三)',
+    mn1:'^bk#mn1(中部一)',
+    mn2:'^bk#mn2(中部二)',
+    mn3:'^bk#mn3(中部三)',
+}
 export const cleanMarkdown=(rawcontent,fn,bkid,firstfile=false)=>{
     const lines=rawcontent.split('\n');
     const suttaid=fn.match(/(\d+).md$/)[1].replace(/^0+/,'');
     const out=[];
     let header='^ck#'+bkid[0]+suttaid;
-    if (firstfile) header='^bk#'+bkid+header;
+    const ak= abulknames[bkid]||'';
+    const bk= booknames[bkid];
+    if (firstfile) header=ak+bk+header;
     for (let i=0;i<lines.length;i++) {
         let line=lines[i];
         const first=line.charAt(0);
