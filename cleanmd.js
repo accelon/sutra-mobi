@@ -1,6 +1,8 @@
 const abulknames={
     dn1:'^ak#dn(長部)',
     mn1:'^bk#mn(中部)',
+    sn1:'^bk#sn(相應部)',
+    an1:'^bk#an(增支部)',
 }
 const booknames={
     dn1:'^bk#dn1(長部一)',
