@@ -1,8 +1,11 @@
 # sutra-mobi
 sutra-mobi markdown to offtext
+
+## todo
+產生brk 功能未port，先把 mn*.hz 放到github
+
 ## prerequisite
     clone repo github.com/sutra-mobi/nikaya
-    mklink/j nikaya ../github.com/sutra-mobi/nikaya
     convert *.md in content to traditional Chinese and save to content-tc (details in folders.js)
 
 ## generate off/*.off
@@ -10,7 +13,7 @@ sutra-mobi markdown to offtext
     node gen mn
 
 ## building database
-    pitaka build 
+    ptk js
     
 ## link pitaka to accelon21
    mklink/j ../accelon21/public/hz hz
