@@ -41,7 +41,7 @@ books.forEach(book=>{
         linecountwarning=outcontent.length!==sccontent.length?red("!="+sccontent.length):'';
     }
 
-    let outfn=desfolder+book+(hz?'.hz.off':'.pku.off');
+    let outfn=desfolder+book+(hz?'.hz.ori.off':'.pku.ori.off');
     const outbuf=outcontent.join('\n');
     if (fs.existsSync(outfn)) {
         outfn+='.gen';
