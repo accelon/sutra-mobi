@@ -13,8 +13,10 @@ sutra-mobi markdown to offtext
     node gen mn
 
 ## building database
-    ptk js
-    
+    ptk ptk 
+    ptk ptk cs-pku
+
+-----------------------------------obsolute----------------------
 ## link pitaka to accelon21
    mklink/j ../accelon21/public/hz hz
 
